@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealz</title>
+</head>
+
+<body>
+    <h2>Put Car Up For Sale</h2>
+    <form action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+    <form action="/dashboard">
+        <input type="submit" value="Dashboard">
+    </form>
+    <form action="/user/{{user_id}}">
+        <input type="submit" value="My Purchases">
+    </form>
+
+    <div>
+        <h3>${{car['price']}}</h3>
+        <p>Model: {{car['model']}}</p>
+        <p>Make: {{car['make']}}</p>
+        <p>Year: {{car['year']}}</p>
+        <p>Description:</p>
+        <p>{{car['description']}}</p>
+        <p>Seller: {{car['first_name']}} {{car['last_name']}}</p>
+    </div>
+
+    <form action="/purchase/{{car['id']}}">
+        <input type="submit" value="Purchase">
+    </form>
+
+</body>
+</html>

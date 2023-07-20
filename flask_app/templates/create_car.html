@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealz</title>
+</head>
+
+<body>
+    <h2>Put Car Up For Sale</h2>
+    <form action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+    <form action="/dashboard">
+        <input type="submit" value="Dashboard">
+    </form>
+    <form action="/user/{{user_id}}">
+        <input type="submit" value="My Purchases">
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="/add_car" method="post">
+        <div>
+            <div>
+                <label for="price">Price</label>
+                <input name="price" type="number" min="0" max="1000000">
+            </div>
+            <div>
+                <label for="model">Model:</label>
+                <input name="model" type="text">
+            </div>
+            <div>
+                <label for="make">Make:</label>
+                <input name="make" type="text">
+            </div>
+            <div>
+                <label for="year">Year:</label>
+                <input name="year" type="number" min="0" max="2025">
+            </div>
+            <div>
+                <label for="desciption">Description:</label>
+                <textarea name="description"></textarea>
+            </div>
+            <input type="submit" value="Add">
+        </div>
+    </form>
+    
+
+</body>
+
+</html>

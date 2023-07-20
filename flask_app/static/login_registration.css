@@ -1,0 +1,18 @@
+.fcontainer{
+    display:flex;
+    justify-content: space-between;
+}
+
+.formTitle{
+    display: block;
+}
+
+.container{
+    display:flex;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
+.vMessage{
+    color: red;
+}
